@@ -186,6 +186,13 @@ section[id] {
   text-decoration: none;
 }
 
+.brand-mark {
+  display: block;
+  flex: none;
+  width: 36px;
+  height: 36px;
+}
+
 .brand-name {
   font-family: var(--font-display);
   font-size: 1.35rem;
@@ -217,7 +224,7 @@ section[id] {
 
 /* ---------- Inicio ---------- */
 .hero {
-  padding-block: clamp(2.5rem, 7vw, 5.5rem);
+  padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 4vw, 3rem);
 }
 
 .hero-grid {
@@ -253,6 +260,7 @@ section[id] {
   color: var(--ink-soft);
   font-size: 0.95rem;
   font-weight: 500;
+  text-wrap: balance;
 }
 
 /* Gráfico de ejemplo */
@@ -387,6 +395,31 @@ section[id] {
   max-width: 56ch;
   margin: 1rem 0 0;
   color: var(--ink-soft);
+}
+
+/* ---------- Portada ---------- */
+.portada {
+  padding-bottom: 0;
+}
+
+.portada figure {
+  margin: 0;
+}
+
+.portada img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.portada figcaption {
+  max-width: 62ch;
+  margin: 0.75rem auto 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  text-align: center;
 }
 
 /* ---------- Servicios ---------- */
@@ -543,6 +576,17 @@ section[id] {
 
 .equipo-grid h2 {
   margin-bottom: 1rem;
+}
+
+.equipo-foto {
+  margin: 0 0 1.5rem;
+}
+
+.equipo-foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-panel);
 }
 
 .personas {
