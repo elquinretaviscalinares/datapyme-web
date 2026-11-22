@@ -867,3 +867,18 @@ section[id] {
     min-height: 44px;
   }
 }
+
+/* ---------- Errores del formulario de contacto ---------- */
+
+/* Mensaje de error debajo de cada campo */
+.campo-error {
+  margin: 0.35rem 0 0;
+  color: #B3261E;
+  font-size: 0.9rem;
+}
+
+/* Borde rojo en los campos con error */
+.campo input[aria-invalid="true"],
+.campo textarea[aria-invalid="true"] {
+  border: 2px solid #B3261E;
+}
