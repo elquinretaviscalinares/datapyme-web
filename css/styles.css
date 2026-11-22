@@ -654,3 +654,102 @@ section[id] {
   max-width: 80ch;
   margin: 0 0 0.35rem;
 }
+
+/* =========================================================
+   Diseño adaptable (tableta y celular)
+   Se escribió desktop primero; aquí se ajusta hacia abajo.
+   ========================================================= */
+
+/* ---------- Tableta y pantallas medianas ---------- */
+@media (max-width: 960px) {
+  .hero-grid,
+  .valor-grid,
+  .equipo-grid,
+  .contacto-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-chart {
+    max-width: 620px;
+  }
+
+  .section-head h2 {
+    max-width: none;
+  }
+
+  /* Encabezado: marca y botón arriba, enlaces debajo */
+  .header-inner {
+    gap: 0.5rem 1rem;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .nav-list {
+    gap: 0 1.25rem;
+  }
+
+  .nav-list a {
+    padding-block: 0.7rem; /* área táctil de al menos 44 px */
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 720px) {
+  body {
+    font-size: 1rem;
+  }
+
+  /* Servicios y etapas en una columna */
+  .servicio {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .etapas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Gráfico: el SVG se reduce, así que el texto interno sube de tamaño */
+  .hero-chart {
+    padding: 1rem 0.85rem 0.85rem;
+  }
+
+  .chart text {
+    font-size: 19px;
+  }
+
+  .chart .chart-title {
+    font-size: 22px;
+  }
+
+  .chart .chart-note,
+  .chart .chart-avg-label {
+    font-size: 17px;
+  }
+
+  .chart-values text {
+    font-size: 18px;
+    stroke-width: 5px;
+  }
+
+  .form {
+    padding: 1.25rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Celulares muy angostos ---------- */
+@media (max-width: 380px) {
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .btn-small {
+    padding-inline: 0.85rem;
+  }
+}
