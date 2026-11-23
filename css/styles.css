@@ -431,10 +431,21 @@ section[id] {
 
 .servicio {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  grid-template-areas:
+    "imagen titulo"
+    "imagen texto";
   gap: 0.75rem clamp(1.5rem, 5vw, 4rem);
-  padding-block: 1.75rem 1.25rem;
+  padding-block: 1.5rem;
   border-top: 1px solid var(--line);
+}
+
+/* Las filas pares llevan la imagen a la derecha */
+.servicio:nth-child(even) {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  grid-template-areas:
+    "titulo imagen"
+    "texto imagen";
 }
 
 .servicio:last-child {
@@ -442,7 +453,22 @@ section[id] {
 }
 
 .servicio h3 {
+  grid-area: titulo;
+  align-self: end;
   font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+}
+
+.servicio > div {
+  grid-area: texto;
+  align-self: start;
+  max-width: 36rem;
+}
+
+.servicio-img {
+  grid-area: imagen;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .servicio-meta {
@@ -769,9 +795,18 @@ section[id] {
     font-size: 1rem;
   }
 
-  /* Servicios y etapas en una columna */
-  .servicio {
+  /* Servicios y etapas en una columna: imagen, título y texto */
+  .servicio,
+  .servicio:nth-child(even) {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "imagen"
+      "titulo"
+      "texto";
+  }
+
+  .servicio-img {
+    max-width: 24rem;
   }
 
   .etapas {
