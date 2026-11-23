@@ -24,7 +24,10 @@ datapyme-web/
 ├── index.html        Estructura y contenido de la página
 ├── css/
 │   └── styles.css    Estilos, paleta y diseño adaptable a celular
-├── img/              Logo, ícono de pestaña e imágenes generadas con IA
+├── js/
+│   ├── menu.js       Menú que se colapsa en celular
+│   └── contacto.js   Validación del formulario de contacto
+├── img/              Logo, ícono de pestaña e ilustraciones generadas con IA
 └── README.md         Este archivo
 ```
 
@@ -38,6 +41,7 @@ La página es estática: no necesita instalar nada. Para verla en el computador 
 - Diseño adaptable: el CSS se escribió primero para pantallas grandes y se ajusta con tres puntos de corte (960, 720 y 380 px). Se probó sin desborde horizontal a 1280, 768, 390 y 320 px.
 - Accesibilidad: texto alternativo en las imágenes, enlace para saltar al contenido, foco visible con teclado y gráfico con descripción para lectores de pantalla.
 - Imágenes en formato WebP para que la página cargue rápido.
+- JavaScript sin librerías y como mejora: si el navegador no ejecuta JavaScript, el menú se ve completo. El formulario es de demostración: valida los campos y muestra un mensaje, pero no envía datos a ningún lado.
 
 ## Reparto del trabajo
 
@@ -69,8 +73,9 @@ Cada prompt se documentó en Notion con su propósito, el texto completo, el res
 ## Forma de trabajo en Git
 
 - Cada persona sube lo que generó o escribió, para que el historial muestre quién hizo qué.
-- Un cambio por commit, con un mensaje en español que dice qué cambió y por qué. El historial cuenta el proceso: estructura, estilos, diseño para celular, titular, texto comercial, imágenes y política de la oferta.
+- Un cambio por commit, con un mensaje en español que dice qué cambió y por qué. El historial cuenta el proceso: estructura, estilos, diseño para celular, titular, texto comercial, imágenes, política de la oferta, menú, validación del formulario e ilustraciones de los servicios.
 - Antes de empezar a trabajar se hace `git pull`, para no pisar los cambios del compañero.
+- Cada cambio llega a `main` por un pull request que revisa la otra persona.
 - La página se publica con GitHub Pages desde la rama `main`, carpeta raíz.
 
 ## Nota
