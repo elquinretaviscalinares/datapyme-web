@@ -821,3 +821,64 @@ section[id] {
     padding-inline: 0.85rem;
   }
 }
+
+
+/* ---------- Menú que se colapsa en celular ---------- */
+
+/* El botón no se ve en pantallas anchas */
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  /* El botón solo aparece si el script cargó (clase js) */
+  .js .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin-left: auto;
+    padding: 0.5rem 1.1rem;
+    border: 2px solid var(--navy);
+    border-radius: var(--radius-control);
+    background: var(--navy);
+    color: #fff;
+    font: 600 1rem/1.2 var(--font-body);
+    cursor: pointer;
+  }
+
+  /* Con script, la lista empieza oculta */
+  .js .nav-list {
+    display: none;
+  }
+
+  /* Al abrir, la lista se muestra en columna */
+  .js .nav-list.abierto {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Cada enlace mide al menos 44 px de alto */
+  .js .nav-list.abierto a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* ---------- Errores del formulario de contacto ---------- */
+
+/* Mensaje de error debajo de cada campo */
+.campo-error {
+  margin: 0.35rem 0 0;
+  color: #B3261E;
+  font-size: 0.9rem;
+}
+
+/* Borde rojo en los campos con error */
+.campo input[aria-invalid="true"],
+.campo textarea[aria-invalid="true"] {
+  border: 2px solid #B3261E;
+}
